@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         node-version: [10.16.0]
-
+          
     steps:
     - uses: actions/checkout@v1
     - name: Run tests with ${{ matrix.node-version }}
@@ -18,10 +18,21 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
+    - name: Cache node_modules
+      uses: actions/cache@preview
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-projectname-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+        restore-keys:
+          ${{ runner.os }}-projectname-
+          
     - name: Build
-      run: |
-        yarn install
-        yarn build
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: yarn install
+      
+    - name: Build
+      run: yarn build
+        
         
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
