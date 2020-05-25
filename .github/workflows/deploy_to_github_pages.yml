@@ -32,11 +32,8 @@ jobs:
     - name: build
       run: yarn build
         
-        
-    - name: deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
-        enable_jekyll: false 
-
+    - name: deploy to netlify
+      run: npx netlify-cli deploy --dir=./dist
+      env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
