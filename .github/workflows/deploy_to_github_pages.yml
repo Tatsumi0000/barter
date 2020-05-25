@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     
-    - name: Cache node_modules
+    - name: cache node_modules
       uses: actions/cache@preview
       with:
         path: ~/.cache/yarn
@@ -26,15 +26,14 @@ jobs:
         restore-keys:
           ${{ runner.os }}-projectname-
           
-    - name: Build
+    - name: install
       if: steps.cache.outputs.cache-hit != 'true'
       run: yarn install
-      
-    - name: Build
+    - name: build
       run: yarn build
         
         
-    - name: Deploy
+    - name: deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
