@@ -1,19 +1,19 @@
 <template>
   <v-app>
     <v-content>
-      <namepoint />
+      <login />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import namepoint from '@/components/namepoint.vue';
+import login from '@/components/login.vue';
 
 export default {
   name: 'App',
 
   components: {
-    namepoint,
+    login,
   },
 
   data: () => ({
