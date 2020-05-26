@@ -1,23 +1,22 @@
 <template>
   <v-app>
   <Header />
-
     <v-content>
-      <HelloWorld />
+      <namepoint />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue';
 import Header from '@/components/Header.vue';
+import namepoint from '@/components/namepoint.vue';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
     Header,
+    namepoint,
   },
 
   data: () => ({

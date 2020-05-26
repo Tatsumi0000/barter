@@ -23,6 +23,7 @@
             target="_blank"
           >Discord Community</a>
         </p>
+        <router-link to="/namepoint">Go to page2</router-link>
       </v-col>
 
       <v-col
