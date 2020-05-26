@@ -1,5 +1,6 @@
 <template>
   <v-app>
+  <Header />
     <v-content>
       <namepoint />
     </v-content>
@@ -7,12 +8,14 @@
 </template>
 
 <script>
+import Header from '@/components/Header.vue';
 import namepoint from '@/components/namepoint.vue';
 
 export default {
   name: 'App',
 
   components: {
+    Header,
     namepoint,
   },
 
