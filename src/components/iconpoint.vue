@@ -5,27 +5,29 @@
         <v-text class="have"
         >所持ポイント</v-text>
         <h class="point">
-          {{ }}
+          {{ point }}
         </h>
+        <div class="font-pt">pt</div>
         <div class="line"></div>
       </v-card-text>
     </v-card>
 </template>
 
+<script>
+
+export default {
+  data() {
+    return { point: (100) };
+  },
+};
+</script>
+
 <style scoped>
-  .have{
+  .have, .point, .font-pt{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     color:  #597B60;
-  }
-
-
-  .point{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    color: #597B60;
   }
 
   .line{
@@ -57,6 +59,13 @@
     height: 4px;
   }
 
+  .font-pt{
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    font-size: 18px;
+  }
+
 }
 
 
@@ -81,7 +90,7 @@
 
   .point{
     position: absolute;
-    top: 78pt;
+    top: 60pt;
     left: 190pt;
     font-size: 90px;
     line-height: 94px;
@@ -91,7 +100,12 @@
     height: 5px;
   }
 
-
+  .font-pt{
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    font-size: 30px;
+  }
 }
 
 @media screen and (min-width:1440px) {
@@ -123,5 +137,13 @@
   .line{
     height: 5px;
   }
+
+  .font-pt{
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    font-size: 18px;
+  }
+
 }
 </style>

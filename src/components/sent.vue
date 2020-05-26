@@ -3,7 +3,7 @@
   <v-card class="boxb">
     <v-select
       class="for"
-      :items="who"
+      :items="user"
       label="送り先"
       full-width
       dense
@@ -16,7 +16,7 @@
       dense
       solo
     ></v-select>
-    <div class="pt">pt</div>
+    <div class="font-pt">pt</div>
   </v-card>
 </div>
 </template>
@@ -30,7 +30,7 @@ export default {
     return {
       items: ageRange,
       age: '',
-      who: ['ガイア', 'マッシュ', 'オルテガ'],
+      user: ['ガイア', 'マッシュ', 'オルテガ'],
       product: {},
     };
   },
@@ -42,7 +42,7 @@ export default {
   background: #597B60;
 }
 
-.point{
+.point, .for{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -50,27 +50,13 @@ export default {
     background-color: white;
 }
 
-.for{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    color: #597B60;
-    background-color: white;
-}
-
-.Mr{
+.Mr, .font-pt{
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   color: white;
 }
 
-.pt{
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  color: white;
-}
 
 @media screen and (min-width:360px) {
   .boxb{
@@ -106,7 +92,7 @@ export default {
     font-size: 18px;
   }
 
-  .pt{
+  .font-pt{
     position: absolute;
     top: 80%;
     left: 75%;
@@ -150,7 +136,7 @@ export default {
     font-size: 30px;
   }
 
-  .pt{
+  .font-pt{
     position: absolute;
     top: 60%;
     left: 60%;
@@ -175,7 +161,7 @@ export default {
     font-size: 30px;
   }
 
-  .point{
+  .font-point{
     position: absolute;
     top: 78pt;
     left: 190pt;
