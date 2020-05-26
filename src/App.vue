@@ -2,20 +2,20 @@
   <v-app>
   <Header />
     <v-content>
-      <login />
+      <namepoint />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import login from '@/components/login.vue';
+import namepoint from '@/components/namepoint.vue';
 import Header from '@/components/Header.vue';
 
 export default {
   name: 'App',
 
   components: {
-    login,
+    namepoint,
     Header,
   },
 
