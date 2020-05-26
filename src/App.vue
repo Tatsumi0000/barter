@@ -2,20 +2,20 @@
   <v-app>
   <Header />
     <v-content>
-      <namepoint />
+      <iconpoint />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import namepoint from '@/components/namepoint.vue';
+import iconpoint from '@/components/iconpoint.vue';
 import Header from '@/components/Header.vue';
 
 export default {
   name: 'App',
 
   components: {
-    namepoint,
+    iconpoint,
     Header,
   },
 
