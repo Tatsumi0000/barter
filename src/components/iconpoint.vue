@@ -52,7 +52,7 @@ export default {
   .point{
     position: absolute;
     top: 31pt;
-    left: 30%;
+    left: 35%;
     font-size: 45px;
     line-height: 80px;
   }
@@ -64,7 +64,7 @@ export default {
   .font-pt{
     position: absolute;
     top: 60%;
-    left: 60%;
+    left: 65%;
     font-size: 18px;
   }
 
