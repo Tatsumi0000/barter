@@ -1,23 +1,25 @@
 <template>
 <header>
-<div class=“header-logo-menu”>
-  <div id=“nav-drawer”>
-  <input id=“nav-input” type=“checkbox” class=“nav-unshown”>
-  <label id=“nav-open” for=“nav-input”><span></span></label>
-  <label class=“nav-unshown” id=“nav-close” for=“nav-input”></label>
-  <div id=“nav-content”>アカウント情報
+<div class="header-logo-menu">
+<div id="nav-drawer">
+  <input id="nav-input" type="checkbox" class="nav-unshown">
+  <label id="nav-open" for="nav-input"><span></span></label>
+  <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+  <div id="nav-content">アカウント情報
   <ul>
   <li><a href="#01">送る</a></li>
   <li><a href="#02">履歴</a></li>
   <li><a href="#03">メンバーリスト</a></li>
-  <li><a href=“#04”>ログアウト</a></li>
+  <li><a href="#04">ログアウト</a></li>
   </ul>
   </div>
   </div>
-  <div class=“logo-area”>Community</div>
+  <div class="logo-area">Community</div>
 </div>
 </header>
 </template>
+
+
 <script>
 export default {
   name: 'Header',
@@ -25,13 +27,14 @@ export default {
   }),
 };
 </script>
+
 <style scoped>
 @media screen and (min-width:767px) {
    #nav-drawer {
      display:none;
    }
  }
-                header {
+  header {
   padding:10px;
   background: #ccc;
 }
