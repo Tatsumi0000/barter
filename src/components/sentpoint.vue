@@ -66,7 +66,7 @@ export default {
   .boxb{
     position: relative;
     width: 290px;
-    height: 180px;
+    height: 160px;
     left: 50%;
     transform : translate(-50%,-50%);
     top: 180px;

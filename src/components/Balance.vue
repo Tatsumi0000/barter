@@ -1,15 +1,17 @@
 <template>
     <v-card
-      class="boxb">
-      <v-card-text >
-        <v-text class="have"
-        >のこりポイント</v-text>
-        <h class="point">
+      class="boxb"
+      >
+      <div >
+        <p class="have"
+        >残り<br>ポイント
+        </p>
+        <h1 class="point">
           {{ balance }}
-        </h>
+        </h1>
         <div class="font-pt">pt</div>
         <div class="line"></div>
-      </v-card-text>
+      </div>
     </v-card>
 </template>
 
@@ -44,35 +46,45 @@ export default {
 
   .line{
     position: absolute;
-    top: 85%;
-    left: 5%;
-    width: 90%;
+    top: 10%;
+    left: 30%;
+    width: 2px;
     background: #597B60;
   }
 
 @media screen and (min-width:360px) {
   .boxb{
     position: relative;
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 50px;
     left: 50%;
     transform : translate(-50%,-50%);
-    top: 180px;
+    top: 145px;
+    outline: auto;
+    outline-color: #597B60;
+    padding: 0%;
   }
+
+  .have{
+    position: relative;
+    left: 5%;
+    width: 25%;
+  }
+
   .point{
     position: absolute;
-    left: 30%;
-    font-size: 45px;
-    line-height: 80px;
+    top: 40%;
+    left: 55%;
+    font-size: 25px;
   }
 
   .line{
-    height: 4px;
+    height: 80%;
   }
 
   .font-pt{
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 70%;
     font-size: 18px;
   }
