@@ -24,11 +24,11 @@ export default {
 
   computed: {
     balance() {
-      return 100 - this.point;
+      return this.curentpoint - this.point;
     },
   },
 
-  props: ['point'],
+  props: ['point', 'curentpoint'],
 };
 
 

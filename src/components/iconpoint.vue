@@ -5,7 +5,7 @@
         <v-text class="have"
         >所持ポイント</v-text>
         <h class="point">
-          {{ point }}
+          {{ curentpoint }}
         </h>
         <div class="font-pt">pt</div>
         <div class="line"></div>
@@ -19,6 +19,8 @@ export default {
   data() {
     return { point: (100) };
   },
+
+  props: ['curentpoint'],
 };
 </script>
 
