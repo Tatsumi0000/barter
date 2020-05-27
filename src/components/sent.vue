@@ -11,7 +11,7 @@
     <div class="Mr">さん</div>
     <v-select
       class="point"
-      :items="items"
+      :items="$store.state.items"
       label=""
       dense
       solo
@@ -22,14 +22,11 @@
 </template>
 
 <script>
-const maxAge = 101;
-const ageRange = [...Array(maxAge).keys()];
+
 
 export default {
   data() {
     return {
-      items: ageRange,
-      age: '',
       user: ['ガイア', 'マッシュ', 'オルテガ'],
       product: {},
     };
