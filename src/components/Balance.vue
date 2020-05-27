@@ -5,7 +5,7 @@
         <v-text class="have"
         >のこりポイント</v-text>
         <h class="point">
-          {{ point }}
+          {{ balance }}
         </h>
         <div class="font-pt">pt</div>
         <div class="line"></div>
@@ -20,6 +20,12 @@ export default {
     return {
       items: this.point,
     };
+  },
+
+  computed: {
+    balance() {
+      return 100 - this.point;
+    },
   },
 
   props: ['point'],
