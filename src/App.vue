@@ -13,7 +13,6 @@ import iconpoint from '@/components/iconpoint.vue';
 import sent from '@/components/sent.vue';
 import Header from '@/components/Header.vue';
 
-
 export default {
   name: 'App',
 
