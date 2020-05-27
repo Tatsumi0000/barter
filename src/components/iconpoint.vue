@@ -45,7 +45,7 @@ export default {
     height: 129px;
     left: 50%;
     transform : translate(-50%,-50%);
-    top: 154px;
+    top: 90px;
   }
   .point{
     position: absolute;

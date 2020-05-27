@@ -3,8 +3,8 @@
   <Header />
     <v-content>
       <iconpoint />
-      <sent />
-      <Balance />
+      <sent @change="onChange" :point="point" />
+      <Balance :point="point" />
     </v-content>
   </v-app>
 </template>
@@ -25,8 +25,14 @@ export default {
     Balance,
   },
 
+  methods: {
+    onChange(val) {
+      this.point = val;
+    },
+  },
+
   data: () => ({
-    //
+    point: 0,
   }),
 };
 </script>

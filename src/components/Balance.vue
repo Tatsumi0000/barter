@@ -5,7 +5,7 @@
         <v-text class="have"
         >のこりポイント</v-text>
         <h class="point">
-          {{ $store.state.point }}
+          {{ point }}
         </h>
         <div class="font-pt">pt</div>
         <div class="line"></div>
@@ -14,11 +14,17 @@
 </template>
 
 <script>
+
 export default {
   data() {
-    return { point: (100) };
+    return {
+      items: this.point,
+    };
   },
+
+  props: ['point'],
 };
+
 
 </script>
 
@@ -42,14 +48,13 @@ export default {
   .boxb{
     position: relative;
     width: 200px;
-    height: 129px;
+    height: 100px;
     left: 50%;
     transform : translate(-50%,-50%);
-    top: 250px;
+    top: 180px;
   }
   .point{
     position: absolute;
-    top: 31pt;
     left: 30%;
     font-size: 45px;
     line-height: 80px;

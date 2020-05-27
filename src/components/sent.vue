@@ -14,7 +14,8 @@
       :items="$store.state.items"
       label=""
       dense
-      solo
+      @change="onChange"
+      :value="selectedParameter"
     ></v-select>
     <div class="font-pt">pt</div>
   </v-card>
@@ -23,7 +24,6 @@
 
 <script>
 
-
 export default {
   data() {
     return {
@@ -31,6 +31,13 @@ export default {
       product: {},
     };
   },
+
+  methods: {
+    onChange(val) {
+      this.$emit('change', val);
+    },
+  },
+
 };
 </script>
 
@@ -62,7 +69,7 @@ export default {
     height: 180px;
     left: 50%;
     transform : translate(-50%,-50%);
-    top: 250px;
+    top: 180px;
   }
   .point{
     position: relative;
