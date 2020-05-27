@@ -3,9 +3,9 @@
       class="boxb">
       <v-card-text >
         <v-text class="have"
-        >所持ポイント</v-text>
+        >のこりポイント</v-text>
         <h class="point">
-          {{ curentpoint }}
+          {{ balance }}
         </h>
         <div class="font-pt">pt</div>
         <div class="line"></div>
@@ -17,11 +17,21 @@
 
 export default {
   data() {
-    return { point: (100) };
+    return {
+      items: this.point,
+    };
   },
 
-  props: ['curentpoint'],
+  computed: {
+    balance() {
+      return this.curentpoint - this.point;
+    },
+  },
+
+  props: ['point', 'curentpoint'],
 };
+
+
 </script>
 
 <style scoped>
@@ -43,15 +53,14 @@ export default {
 @media screen and (min-width:360px) {
   .boxb{
     position: relative;
-    width: 290px;
-    height: 129px;
+    width: 200px;
+    height: 100px;
     left: 50%;
     transform : translate(-50%,-50%);
-    top: 90px;
+    top: 180px;
   }
   .point{
     position: absolute;
-    top: 31pt;
     left: 30%;
     font-size: 45px;
     line-height: 80px;
@@ -64,7 +73,7 @@ export default {
   .font-pt{
     position: absolute;
     top: 60%;
-    left: 60%;
+    left: 70%;
     font-size: 18px;
   }
 
@@ -78,7 +87,7 @@ export default {
     height: 200px;
     left: 50%;
     transform : translate(-50%,-50%);
-    top: 200px;
+    top: 300px;
   }
 
   .have{
