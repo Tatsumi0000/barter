@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 
 export const routes = [
   {
-    path: '/',
+    path: '/top',
     component: Home,
   },
   {
@@ -17,10 +17,20 @@ export const routes = [
     path: '/login',
     component: Login,
   },
+  {
+    path: '',
+    redirect: '/top',
+  },
+  {
+    path: '*',
+    redirect: '/top',
+  },
+
 ];
 
 const router = new VueRouter({
   mode: 'history',
+  base: process.env.BASE_URL,
   routes,
 });
 
