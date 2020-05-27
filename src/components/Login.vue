@@ -11,13 +11,13 @@
       <v-card-text>
         <v-form>
           <v-text-field
-            v-bind="id"
+            v-model.number="ID"
             prepend-icon="mdi-account-circle"
             label="ユーザ名"
             class="user"
           />
           <v-text-field
-            v-model="pass"
+            v-model="PASS"
             v-bind:type="showPassword ? 'text' : 'password'"
             append-icon="mdi-eye-off"
             prepend-icon="mdi-lock"
@@ -41,12 +41,27 @@ export default {
   name: 'App',
   data: () => ({
     showPassword: false,
-    id: '',
-    pass: '',
+    url: 'http://localhost:1234/login',
+    ID: 0,
+    PASS: '',
+    // userData: { ID: 0, PASS: '' },
   }),
   methods: {
     login() {
-      console.log(this.id, this.pass);
+      const params = new URLSearchParams();
+      params.append('ID', this.ID);
+      params.append('PASSWORD', this.PASS);
+      console.log(params.header);
+      this.axios
+        // .post(this.url, this.userData, { 'Content-Type': 'text/plain; charset=utf-8' })
+        .post('http://localhost:1234/login', params)
+        // .post('http://localhost:1234/login')
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };
