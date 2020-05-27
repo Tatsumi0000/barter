@@ -1,56 +1,47 @@
 <template>
 <header>
-        
-        <div class="header-logo-menu">
-            <div id="nav-drawer">
-                <input id="nav-input" type="checkbox" class="nav-unshown">
-                <label id="nav-open" for="nav-input"><span></span></label>
-                <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-                <div id="nav-content">アカウント情報
-                    <ul>
-                    <li><a href="#01">送る</a></li>
-                    <li><a href="#02">履歴</a></li>
-                    <li><a href="#03">メンバーリスト</a></li>
-                    <li><a href="#04">ログアウト</a></li>
-                  </ul>
-                　</div>
-                <script>
-                    $(function() {
-                      $('#nav-content li a').on('click', function(event) {
-                        $('#nav-input').prop('checked', false);
-                      });
-                    });
-                    </script>
-             </div>
-                <div class="logo-area">Community</div>
-            </div>
-            </header>
+<div class=“header-logo-menu”>
+  <div id=“nav-drawer”>
+  <input id=“nav-input” type=“checkbox” class=“nav-unshown”>
+  <label id=“nav-open” for=“nav-input”><span></span></label>
+  <label class=“nav-unshown” id=“nav-close” for=“nav-input”></label>
+  <div id=“nav-content”>アカウント情報
+  <ul>
+  <li><a href="#01">送る</a></li>
+  <li><a href="#02">履歴</a></li>
+  <li><a href="#03">メンバーリスト</a></li>
+  <li><a href=“#04”>ログアウト</a></li>
+  </ul>
+  </div>
+  </div>
+  <div class=“logo-area”>Community</div>
+</div>
+</header>
 </template>
-
-
-<script></script>
-
+<script>
+export default {
+  name: 'Header',
+  data: () => ({
+  }),
+};
+</script>
 <style scoped>
 @media screen and (min-width:767px) {
    #nav-drawer {
      display:none;
    }
  }
-                
                 header {
   padding:10px;
   background: #ccc;
 }
-
 #nav-drawer {
   position: relative;
 }
-
 /*チェックボックス等は非表示に*/
 .nav-unshown {
   display:none;
 }
-
 /*アイコンのスペース*/
 #nav-open {
   display: inline-block;
@@ -58,7 +49,6 @@
   height: 22px;
   vertical-align: middle;
 }
-
 /*ハンバーガーの形をCSSで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
   position: absolute;
@@ -67,7 +57,7 @@
   border-radius: 3px;
   background: #555;
   display: block;
-  content: '';
+  content: ‘’;
   cursor: pointer;
 }
 #nav-open span:before {
@@ -76,7 +66,6 @@
 #nav-open span:after {
   bottom: -16px;
 }
-
 /*閉じる用の薄黒箇所*/
 #nav-close {
   display: none;
@@ -90,7 +79,6 @@
   opacity: 0;
   transition: .3s ease-in-out;
 }
-
 /*メニューの中身*/
 #nav-content {
   overflow: auto;
@@ -106,19 +94,16 @@
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);
 }
-
 /*チェックがついたら表示させる*/
 #nav-input:checked ~ #nav-close {
   display: block;
   opacity: .5;
 }
-
 #nav-input:checked ~ #nav-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
   box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
-
 .header-logo-menu{
  display: flex;
  display: -moz-flex;
@@ -131,7 +116,6 @@
  -webkit-flex-direction: row;
  -ms-flex-direction: row;
 }
-
 /*ロゴやサイトタイトルをセンタリング*/
 .logo-area{text-align:center;margin:auto;}
 </style>
