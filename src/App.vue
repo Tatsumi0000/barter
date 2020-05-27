@@ -1,16 +1,16 @@
 <template>
   <v-app>
-  <Header />
+    <Header />
     <v-content>
-      <iconpoint />
-      <sent />
+      <Iconpoint />
+      <Sent />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import iconpoint from '@/components/iconpoint.vue';
-import sent from '@/components/sent.vue';
+import Iconpoint from '@/components/Iconpoint.vue';
+import Sent from '@/components/Sent.vue';
 import Header from '@/components/Header.vue';
 
 
@@ -18,9 +18,9 @@ export default {
   name: 'App',
 
   components: {
-    iconpoint,
+    Iconpoint,
     Header,
-    sent,
+    Sent,
   },
 
   data: () => ({
