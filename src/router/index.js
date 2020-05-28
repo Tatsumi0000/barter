@@ -1,23 +1,31 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
+import Login from '@/components/Login.vue';
+import Home from '@/views/Home.vue';
+// import Iconpoint from '@/components/Iconpoint.vue';
+// import Sent from '@/components/Sent.vue';
 
 Vue.use(VueRouter);
 
-const routes = [
+export const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: '/top',
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    // ログイン画面
+    path: '/login',
+    component: Login,
   },
+  {
+    path: '',
+    redirect: '/top',
+  },
+  {
+    path: '*',
+    redirect: '/top',
+  },
+
 ];
 
 const router = new VueRouter({
