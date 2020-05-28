@@ -1,49 +1,57 @@
 <template>
-<header>
-<div class="header-logo-menu">
-<div id="nav-drawer">
-  <input id="nav-input" type="checkbox" class="nav-unshown">
-  <label id="nav-open" for="nav-input"><span></span></label>
-  <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-  <div id="nav-content">アカウント情報
-  <ul>
-  <li><a href="#01">送る</a></li>
-  <li><a href="#02">履歴</a></li>
-  <li><a href="#03">メンバーリスト</a></li>
-  <li><a href="#04">ログアウト</a></li>
-  </ul>
-  </div>
-  </div>
-  <div class="logo-area">Community</div>
-</div>
-</header>
+  <header>
+    <div class="header-logo-menu">
+      <div id="nav-drawer">
+        <input id="nav-input" type="checkbox" class="nav-unshown" />
+        <label id="nav-open" for="nav-input"><span></span></label>
+        <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+        <div id="nav-content">
+          <v-card class="nameplate">
+            <p class="id">id 000000 所属OOOO</p>
+            <h1 class="name">NAME</h1>
+          </v-card>
+          <ul class="menue">
+            <li class="li1"><a href="#01">送る</a></li>
+            <div class="line"></div>
+            <li class="li1"><a href="#02">履歴</a></li>
+            <div class="line"></div>
+            <li class="li1"><a href="#03">メンバーリスト</a></li>
+            <div class="line"></div>
+          </ul>
+          <ul>
+            <li class="li2"><a href="#04">ログアウト</a></li>
+            <div class="line2"></div>
+          </ul>
+        </div>
+      </div>
+      <div class="logo-area">Community</div>
+    </div>
+  </header>
 </template>
-
 
 <script>
 export default {
   name: 'Header',
-  data: () => ({
-  }),
+  data: () => ({}),
 };
 </script>
 
 <style scoped>
-@media screen and (min-width:767px) {
-   #nav-drawer {
-     display:none;
-   }
- }
-  header {
-  padding:10px;
-  background: #597B60;
+@media screen and (min-width: 767px) {
+  #nav-drawer {
+    display: none;
+  }
+}
+header {
+  padding: 10px;
+  background: #597b60;
 }
 #nav-drawer {
   position: relative;
 }
 /*チェックボックス等は非表示に*/
 .nav-unshown {
-  display:none;
+  display: none;
 }
 /*アイコンのスペース*/
 #nav-open {
@@ -53,10 +61,12 @@ export default {
   vertical-align: middle;
 }
 /*ハンバーガーの形をCSSで表現*/
-#nav-open span, #nav-open span:before, #nav-open span:after {
+#nav-open span,
+#nav-open span:before,
+#nav-open span:after {
   position: absolute;
-  height: 3px;/*線の太さ*/
-  width: 25px;/*長さ*/
+  height: 3px; /*線の太さ*/
+  width: 25px; /*長さ*/
   border-radius: 3px;
   background: #555;
   display: block;
@@ -80,7 +90,7 @@ export default {
   height: 100%;
   background: black;
   opacity: 0;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 /*メニューの中身*/
 #nav-content {
@@ -90,39 +100,39 @@ export default {
   left: 0;
   z-index: 9999;
   width: 90%;
-  max-width: 330px;/*最大幅（お好みで調整を）*/
+  max-width: 330px; /*最大幅（お好みで調整を）*/
   height: 100%;
   background: #fff;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);
 }
 /*チェックがついたら表示させる*/
 #nav-input:checked ~ #nav-close {
   display: block;
-  opacity: .5;
+  opacity: 0.5;
 }
 #nav-input:checked ~ #nav-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
-  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
 }
-.header-logo-menu{
- display: flex;
- display: -moz-flex;
- display: -o-flex;
- display: -webkit-flex;
- display: -ms-flex;
- flex-direction: row;
- -moz-flex-direction: row;
- -o-flex-direction: row;
- -webkit-flex-direction: row;
- -ms-flex-direction: row;
+.header-logo-menu {
+  display: flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  flex-direction: row;
+  -moz-flex-direction: row;
+  -o-flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
 }
 /*ロゴやサイトタイトルをセンタリング*/
-.logo-area{
-  text-align:center;
-  margin:auto;
+.logo-area {
+  text-align: center;
+  margin: auto;
   color: #fff;
-  }
+}
 </style>
