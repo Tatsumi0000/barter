@@ -10,11 +10,20 @@ export default new Vuex.Store({
   state: {
     items: pointRange,
     point: '',
+    userInfo: {
+      name: 'Name',
+      jwt: 'JWT',
+      id: 0,
+      myPoint: 0,
+    },
   },
-  mutations: {
+  // ゲッター
+  getters: {
+    getUserInfo() {
+      return this.userInfo;
+    },
   },
-  actions: {
-  },
-  modules: {
-  },
+  mutations: {},
+  actions: {},
+  modules: {},
 });

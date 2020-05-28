@@ -20,7 +20,7 @@
       <img class="ex3" src="/img/icons/explanation3.png" />
       <img class="sapo" src="/img/icons/support.png" />
     </div>
-    <button class="btn" height="80px"><img src="/img/icons/use.png" alt=""></button>
+    <v-btn class="btn" height="80px" to="/login"><img src="/img/icons/use.png" alt=""/></v-btn>
 
     <v-footer class="footer">
       <v-img src="/img/icons/footer.svg" max-height="50"></v-img>

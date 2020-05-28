@@ -11,13 +11,13 @@
       <v-card-text>
         <v-form>
           <v-text-field
-            v-model.number="ID"
+            v-model.number="userInfo.ID"
             prepend-icon="mdi-account-circle"
             label="ユーザ名"
             class="user"
           />
           <v-text-field
-            v-model="PASS"
+            v-model="userInfo.PASS"
             v-bind:type="showPassword ? 'text' : 'password'"
             append-icon="mdi-eye-off"
             prepend-icon="mdi-lock"
@@ -29,6 +29,7 @@
           </v-card-actions>
         </v-form>
       </v-card-text>
+      {{ sample }}
     </v-card>
     <v-footer class="footer">
       <v-img src="/img/icons/footer.svg" max-height="230"></v-img>
@@ -37,14 +38,21 @@
 </template>
 
 <script>
+// import store from '@/store/index';
+
 export default {
   name: 'App',
   data: () => ({
     showPassword: false,
     url: 'http://localhost:1234/login',
-    ID: null,
-    PASS: '',
-    // userData: { ID: 0, PASS: '' },
+    // ID: null,
+    // PASS: '',
+    userInfo: {
+      ID: 0,
+      PASS: '',
+      Name: '',
+      Jwt: '',
+    },
   }),
   methods: {
     login() {
@@ -57,11 +65,26 @@ export default {
         .post('http://localhost:1234/login', params)
         // .post('http://localhost:1234/login')
         .then((response) => {
-          console.log(response);
+          // console.log(response);
+          console.log(response.data.JWT);
+          this.$store.commit('userInfo.jwt', this.userInfo.Jwt);
+          if (response.data.JWT == null) {
+            alert('IDもしくはパスワードが違います');
+            this.$store.dispath('');
+            // console.log(this.$store.getters.getUserInfo);
+          } else {
+            // store.state.jwt = response.data.JWT;
+            // console.log(this.AAA);
+          }
         })
         .catch((error) => {
           console.log(error);
         });
+    },
+  },
+  computed: {
+    sample() {
+      return this.$store.state.userInfo;
     },
   },
 };
