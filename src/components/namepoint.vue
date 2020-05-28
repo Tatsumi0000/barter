@@ -18,13 +18,24 @@
       <v-card-text >
         <div>所持ポイント</div>
         <h class="point">
-          100pt
+          {{ curentpoint }}
         </h>
       </v-card-text>
     </v-card>
   </v-flex>
   </v-app>
 </template>
+
+<script>
+
+export default {
+  data() {
+    return { point: (100) };
+  },
+
+  props: ['curentpoint'],
+};
+</script>
 
 <style>
   @media screen and (min-width:360px) {

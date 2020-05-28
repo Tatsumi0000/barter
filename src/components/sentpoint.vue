@@ -11,10 +11,11 @@
     <div class="Mr">さん</div>
     <v-select
       class="point"
-      :items="items"
+      :items="$store.state.items"
       label=""
       dense
-      solo
+      @change="onChange"
+      :value="selectedParameter"
     ></v-select>
     <div class="font-pt">pt</div>
   </v-card>
@@ -22,18 +23,21 @@
 </template>
 
 <script>
-const maxAge = 101;
-const ageRange = [...Array(maxAge).keys()];
 
 export default {
   data() {
     return {
-      items: ageRange,
-      age: '',
       user: ['ガイア', 'マッシュ', 'オルテガ'],
       product: {},
     };
   },
+
+  methods: {
+    onChange(val) {
+      this.$emit('change', val);
+    },
+  },
+
 };
 </script>
 
@@ -62,10 +66,10 @@ export default {
   .boxb{
     position: relative;
     width: 290px;
-    height: 180px;
+    height: 160px;
     left: 50%;
     transform : translate(-50%,-50%);
-    top: 250px;
+    top: 180px;
   }
   .point{
     position: relative;
