@@ -5,12 +5,22 @@
   <input id="nav-input" type="checkbox" class="nav-unshown">
   <label id="nav-open" for="nav-input"><span></span></label>
   <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-  <div id="nav-content">アカウント情報
+  <div id="nav-content">
+  <v-card class="nameplate">
+    <p class="id">id 000000 所属OOOO</p>
+    <h1 class="name">NAME</h1>
+  </v-card>
+  <ul class="menue">
+  <li class="li1"><a href="#01">送る</a></li>
+  <div class="line"></div>
+  <li class="li1"><a href="#02">履歴</a></li>
+  <div class="line"></div>
+  <li class="li1"><a href="#03">メンバーリスト</a></li>
+  <div class="line"></div>
+  </ul>
   <ul>
-  <li><a href="#01">送る</a></li>
-  <li><a href="#02">履歴</a></li>
-  <li><a href="#03">メンバーリスト</a></li>
-  <li><a href="#04">ログアウト</a></li>
+  <li class="li2"><a href="#04">ログアウト</a></li>
+  <div class="line2"></div>
   </ul>
   </div>
   </div>
@@ -103,6 +113,60 @@ export default {
   transition: .3s ease-in-out;
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);
+}
+
+.nameplate{
+  width: 100%;
+  height: 25%;
+  background-color: #597B60;
+}
+
+.id{
+  position: relative;
+  top: 30%;
+  left: 40%;
+  color: white;
+}
+
+.name{
+  position: relative;
+  top: 30%;
+  left: 40%;
+  width: 50%;
+  color: white;
+}
+
+
+.menue{
+  position: relative;
+  top: 5%;
+}
+
+.li1{
+  font-size: 20px;
+  margin: 5px;
+  color: #597B60;
+}
+
+.li2{
+  position: relative;
+  top: 300px;
+  font-size: 20px;
+  margin: 5px;
+  color: #597B60;
+}
+
+
+.line{
+  height: 1px;
+  background: #597B60;
+}
+
+.line2{
+  position: relative;
+  top: 300px;
+  height: 1px;
+  background: #597B60;
 }
 
 /*チェックがついたら表示させる*/
