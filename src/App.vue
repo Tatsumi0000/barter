@@ -38,14 +38,7 @@ export default {
   // },
 
   data: () => ({
-    point: 0,
-    mypoint: 100,
+    //
   }),
 };
 </script>
-
-<style scoped>
-  .app{
-    background-color: #FFFAF2;
-  }
-</style>

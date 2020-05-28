@@ -34,21 +34,17 @@ export default {
      display:none;
    }
  }
-
-                header {
+  header {
   padding:10px;
   background: #597B60;
 }
-
 #nav-drawer {
   position: relative;
 }
-
 /*チェックボックス等は非表示に*/
 .nav-unshown {
   display:none;
 }
-
 /*アイコンのスペース*/
 #nav-open {
   display: inline-block;
@@ -56,7 +52,6 @@ export default {
   height: 22px;
   vertical-align: middle;
 }
-
 /*ハンバーガーの形をCSSで表現*/
 #nav-open span, #nav-open span:before, #nav-open span:after {
   position: absolute;
@@ -65,7 +60,7 @@ export default {
   border-radius: 3px;
   background: #555;
   display: block;
-  content: '';
+  content: ‘’;
   cursor: pointer;
 }
 #nav-open span:before {
@@ -74,7 +69,6 @@ export default {
 #nav-open span:after {
   bottom: -16px;
 }
-
 /*閉じる用の薄黒箇所*/
 #nav-close {
   display: none;
@@ -88,7 +82,6 @@ export default {
   opacity: 0;
   transition: .3s ease-in-out;
 }
-
 /*メニューの中身*/
 #nav-content {
   overflow: auto;
@@ -104,19 +97,16 @@ export default {
   -webkit-transform: translateX(-105%);
   transform: translateX(-105%);
 }
-
 /*チェックがついたら表示させる*/
 #nav-input:checked ~ #nav-close {
   display: block;
   opacity: .5;
 }
-
 #nav-input:checked ~ #nav-content {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
   box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
-
 .header-logo-menu{
  display: flex;
  display: -moz-flex;
@@ -129,7 +119,6 @@ export default {
  -webkit-flex-direction: row;
  -ms-flex-direction: row;
 }
-
 /*ロゴやサイトタイトルをセンタリング*/
 .logo-area{
   text-align:center;
