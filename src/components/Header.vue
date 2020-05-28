@@ -36,7 +36,7 @@ export default {
  }
   header {
   padding:10px;
-  background: #ccc;
+  background: #597B60;
 }
 #nav-drawer {
   position: relative;
@@ -120,5 +120,9 @@ export default {
  -ms-flex-direction: row;
 }
 /*ロゴやサイトタイトルをセンタリング*/
-.logo-area{text-align:center;margin:auto;}
+.logo-area{
+  text-align:center;
+  margin:auto;
+  color: #fff;
+  }
 </style>

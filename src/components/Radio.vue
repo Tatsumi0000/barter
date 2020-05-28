@@ -8,17 +8,56 @@
     <label class="tab_item" for="design">もらった</label>
     <div class="tab_content" id="all_content">
       <div class="tab_content_description">
-        <p class="c-txtsp">履歴の内容がここに入ります</p>
+          <v-list
+            class="a"
+            :items="user"
+            full-width
+            dense
+          ><img class="get" src="/img/icons/get.svg" /><p class="c-txtsp">{{ user }}</p>
+          </v-list>
+          <v-list
+            class="a"
+            :items="user"
+            full-width
+            dense
+          ><img class="get2" src="/img/icons/send.svg" /><p class="c-txtsp">{{ user }}</p>
+          </v-list>
+          <v-list
+            class="a"
+            :items="user"
+            full-width
+            dense
+          ><img class="get3" src="/img/icons/get.svg" /><p class="c-txtsp">{{ user }}</p>
+          </v-list>
+          <v-list
+            class="a"
+            :items="user"
+            full-width
+            dense
+          ><img class="get4" src="/img/icons/send.svg" /><p class="c-txtsp">{{ user }}</p>
+          </v-list>
       </div>
     </div>
     <div class="tab_content" id="programming_content">
       <div class="tab_content_description">
-        <p class="c-txtsp">送った内容がここに入ります</p>
+        <p class="c-txtsp"><v-list
+            class="a"
+            :items="user"
+            full-width
+            dense
+          ><img class="get" src="/img/icons/get.svg" />{{ user }}
+          </v-list></p>
       </div>
     </div>
     <div class="tab_content" id="design_content">
       <div class="tab_content_description">
-        <p class="c-txtsp">もらった内容がここに入ります</p>
+        <p class="c-txtsp"><v-list
+            class="a"
+            :items="user"
+            full-width
+            dense
+          ><img class="get" src="/img/icons/get.svg" />{{ user }}
+          </v-list></p>
       </div>
     </div>
   </div>
@@ -26,16 +65,26 @@
 </template>
 <script>
 
+export default {
+  data() {
+    return {
+      user: ['送信', '50pt', '山川あや', '2020/5/28'],
+      product: {},
+    };
+  },
+};
 
 </script>
-<style spoped>
+<style scoped>
     @media screen and (min-width:767px){}
     .tabs {
+      position: relative;
+      top: 20px;
       margin-top: 50px;
       padding-bottom: 40px;
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      width: 700px;
+      width: 90%;
       margin: 0 auto;}
     /*タブのスタイル*/
     .tab_item {
@@ -77,5 +126,39 @@
     .tabs input:checked + .tab_item {
       background-color: #fff;
       color: #57685A;
+    }
+    .c-txtsp {
+      list-style-type: none;
+      border-bottom: 1px dotted #597b60;
+      position: relative;
+      left: px;
+      }
+    .get {
+      position:absolute;
+      width: 35px;
+      height: 20px;
+      left: 2px;
+      top: 100px;
+    }
+    .get2 {
+      position:absolute;
+      width: 35px;
+      height: 20px;
+      left: 2px;
+      top: 155px;
+    }
+    .get3 {
+      position:absolute;
+      width: 35px;
+      height: 20px;
+      left: 2px;
+      top: 210px;
+    }
+    .get4 {
+      position:absolute;
+      width: 35px;
+      height: 20px;
+      left: 2px;
+      top: 265px;
     }
 </style>
